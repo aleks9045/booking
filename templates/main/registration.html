@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+СТЕЙКЕЙШН.ru | Регистрация объекта
+{% endblock %}
+
+{% block content %}
+<div class="container text-center">
+<h1>Регистрация нового объекта</h1>
+<form method="post">
+  {% csrf_token %}
+  <br>
+  {{ form.name }}<br>
+  <br>
+  {{ form.city }}<br>
+  <br>
+  {{ form.description }}<br><br>
+  <button class="btn btn-primary" type="submit">Отправить</button>
+</form></div>
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+СТЕЙКЕЙШН.ru | Санкт-Петербург
+{% endblock %}
+
+{% block content %}
+<div class="row alert text-center">
+            <div class="col-12">
+                <h4 class="display-4">Санкт-Петербург</h4>
+                <div class="city_text display-6">
+                    <h7>
+                        Город раскинулся в устье реки Невы, которая впадает в Финский залив Балтийского моря. Считается
+                        культурной столицей России.
+                    </h7>
+                </div>
+            </div>
+        </div>
+        <div class="container-sm city_viwer">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="{% static '/main/img/peterburg.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/peterburg1.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/peterburg2.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev prev_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next next_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="hotels_city row alert text-center">
+                <h3 class="display-6">Доступные отели</h3>
+            </div>
+            <div class="container-fluid text-center hotels_cards">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/lotman.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Lotman Boutique Hotel</h5>
+                                <p class="card-text">Камера хранения багажа, многоязычный персонал, услуги трансфера и
+                                    прачечная самообслуживания к услугам гостей. Благодаря WiFi (бесплатно) в
+                                    общественных зонах гости имеют возможность свободно пользоваться интернетом. </p>
+                                <br>
+                                <p>2400 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/greenfeel.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">GREENFEEL</h5>
+                                <p class="card-text">Удобства включают телевизор и WiFi (бесплатно). Есть ванная комната
+                                    с душем. Фен добавит ощущение домашнего комфорта. Приятные мелочи – например
+                                    косметические продукты, – ожидают вас в ванных комнатах.</p>
+                                <br>
+                                <p>1900 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/shouyan.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">SHOUYUAN</h5>
+                                <p class="card-text">Лифт доставит вас на верхние этажи. Можно воспользоваться камерой
+                                    хранения багажа и сейфом. WiFi (бесплатно) в общественных зонах. Сотрудники
+                                    туристического бюро с удовольствием помогут вам при организации туров и экскурсий.
+                                </p>
+                                <br>
+                                <p>1000 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

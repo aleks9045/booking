@@ -1,0 +1,103 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+СТЕЙКЕЙШН.ru | Москва
+{% endblock %}
+
+{% block content %}
+<div class="row alert text-center">
+            <div class="col-12">
+                <h4 class="display-4">Москва</h4>
+                <div class="city_text display-6">
+                    <h7>
+                        Москва - столица России и крупнейший город страны. Это огромный мегаполис, который является
+                        историческим, политическим и духовным сердцем России.
+                    </h7>
+                </div>
+            </div>
+        </div>
+        <div class="container-sm city_viwer">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="{% static '/main/img/moscow.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/moscow1.png' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/moscow2.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev prev_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next next_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="hotels_city row alert text-center">
+                <h3 class="display-6">Доступные отели</h3>
+            </div>
+            <div class="container-fluid text-center hotels_cards">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/nika.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Ника Отель</h5>
+                                <p class="card-text">Просторные холлы, скоростные лифты, оснащение номеров
+                                    кондиционерами и доступом в Интернет посредством Wi-Fi, великолепное питание,
+                                    прекрасно организованная технология сервиса, профессионализм и вежливость.</p>
+                                <br>
+                                <p>2600 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/metropol.jpeg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Метрополь</h5>
+                                <p class="card-text">Этот элитный отель с атриумом в центре занимает роскошное здание в
+                                    стиле модерн. В 4 минутах ходьбы находится ближайшая станция метро и Большой театр,
+                                    а в 15 минутах – Московский Кремль.</p>
+                                <br>
+                                <p>25000 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/novotel.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Novotel</h5>
+                                <p class="card-text">В тихих уютных номерах есть бесплатный доступ к Wi-Fi, телевизор с
+                                    плоским экраном, письменный стол и диван-кровать, а также принадлежности для
+                                    приготовления чая и кофе.</p>
+                                <br>
+                                <p>10300 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

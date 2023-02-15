@@ -1,0 +1,104 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+СТЕЙКЕЙШН.ru | Якутия
+{% endblock %}
+
+{% block content %}
+<div class="row alert text-center">
+            <div class="col-12">
+                <h4 class="display-4">Якутск</h4>
+                <div class="city_text display-6">
+                    <h7>
+                        Это один из крупнейших портов на реке Лена и самый крупный город, расположенный в зоне вечной
+                        мерзлоты.
+                    </h7>
+                </div>
+            </div>
+        </div>
+        <div class="container-sm city_viwer">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="{% static '/main/img/yakutsk.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/yakutsk1.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/yakutsk2.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev prev_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next next_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="hotels_city row alert text-center">
+                <h3 class="display-6">Доступные отели</h3>
+            </div>
+            <div class="container-fluid text-center hotels_cards">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/azimut.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">AZIMUT</h5>
+                                <p class="card-text">тот современный отель находится в 1,5 км от Центрального парка
+                                    культуры и отдыха и в 2,3 км от палеонтологического музея.
+                                    В каждом просто обставленном номере есть бесплатный доступ к Wi-Fi, телевизор с
+                                    плоским экраном, мини-бар, сейф и электрический чайник.</p>
+                                <br>
+                                <p>8300 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/tygyn.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Тыгын Дархан</h5>
+                                <p class="card-text">Этот простой отель находится в центре города, рядом с ресторанами.
+                                    В 7 минутах ходьбы отсюда расположен Градоякутский Преображенский кафедральный
+                                    собор.</p>
+                                <br>
+                                <p>11300 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/sibir.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Сибирь</h5>
+                                <p class="card-text">Различные удобства в этом отеле – например камера хранения багажа и
+                                    прачечная самообслуживания – сделают ваше пребывание особенно комфортным. Машину
+                                    можно припарковать на собственной автостоянке отеля (бесплатно).</p>
+                                <br>
+                                <p>2998 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

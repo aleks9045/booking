@@ -1,0 +1,145 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+СТЕЙКЕЙШН.ru | Российское зеркало
+{% endblock %}
+
+{% block content %}
+<div class="container search_block text-center">
+                <button class="btn btn-primary dropdown-toggle padding" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Куда вы хотите поехать?
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="krasnodar">Краснодар</a></li>
+                  <li><a class="dropdown-item" href="sochi">Сочи</a></li>
+                  <li><a class="dropdown-item" href="rostov_on_don">Ростов-на-Дону</a></li>
+                  <li><a class="dropdown-item" href="yakutsk">Якутск</a></li>
+                  <li><a class="dropdown-item" href="moscow">Москва</a></li>
+                  <li><a class="dropdown-item" href="saintpetersburg">Санкт-Петербург</a></li>
+                  <li><a class="dropdown-item" href="yalta">Ялта</a></li>
+                  <li><a class="dropdown-item" href="krim">Крым</a></li>
+                  <li><a class="dropdown-item" href="ekaterinburg">Екатеринбург</a></li>
+                </ul>
+        </div>
+        <div class="container-xxl">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="row mx">
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <a href="krasnodar">
+                                    <img src="{% static '/main/img/krasnodar.jpg' %}" class="card-img-top" alt="krasnodar">
+                                </a>
+                                <div class="card-body">
+                                  <p class="card-text "><h3>Краснодар</h3>3 вариантов размещения</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <a href="sochi">
+                                <img src="{% static '/main/img/sochi.jpeg' %}" class="card-img-top" alt="sochi">
+                                </a>
+                                <div class="card-body">
+                                  <p class="card-text "><h3>Сочи</h3>3 вариантов размещения</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <a href="rostov_on_don">
+                                <img src="{% static '/main/img/rostov.jpg' %}" class="card-img-top" alt="rostov">
+                                </a>
+                                <div class="card-body">
+                                  <p class="card-text "><h3>Ростов-на-Дону</h3>3 вариантов размещения</p>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <a href="yakutsk">
+                                <img src="{% static '/main/img/yakutsk.jpg' %}" class="card-img-top" alt="yakutsk">
+                                </a>
+                                <div class="card-body">
+                                  <p class="card-text "><h3>Якутск</h3>3 вариант размещения</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <a href="moscow">
+                                <img src="{% static '/main/img/moscow.jpeg' %}" class="card-img-top" alt="moscow">
+                                </a>
+                                <div class="card-body">
+                                  <p class="card-text "><h3>Москва</h3>3 вариантов размещения</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <a href="saintpetersburg">
+                                <img src="{% static '/main/img/peterburg.jpg' %}" class="card-img-top" alt="peterburg">
+                                </a>
+                                <div class="card-body">
+                                  <p class="card-text "><h3>Санкт-Петербург</h3>3 вариантов размещения</p>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <a href="yalta">
+                                <img src="{% static '/main/img/yalta.jpg' %}" class="card-img-top" alt="yalta">
+                                </a>
+                                <div class="card-body">
+                                  <p class="card-text "><h3>Ялта</h3>3 вариантов размещения</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <a href="krim">
+                                <img src="{% static '/main/img/krim.jpg' %}" class="card-img-top" alt="krim">
+                                </a>
+                                <div class="card-body">
+                                  <p class="card-text "><h3>Крым</h3>3 вариантов размещения</p>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <a href="ekaterinburg">
+                                <img src="{% static '/main/img/ekaterinburg.jpg' %}" class="card-img-top" alt="ekaterinburg">
+                                </a>
+                                <div class="card-body">
+                                  <p class="card-text "><h3> Екатеринбург</h3>3 вариантов размещения</p>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+{% endblock %}

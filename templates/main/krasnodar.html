@@ -1,0 +1,108 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+СТЕЙКЕЙШН.ru | Краснодар
+{% endblock %}
+
+{% block content %}
+<div class="row alert text-center">
+            <div class="col-12">
+                <h4 class="display-4">Краснодар</h4>
+                <div class="city_text display-6">
+                    <h7>
+                        Краснодар — город на юго-западе России, расположенный на правом
+                        берегу реки Кубани, на расстоянии 120 км от Чёрного моря.
+                    </h7>
+                </div>
+            </div>
+        </div>
+        <div class="container-sm city_viwer">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="{% static '/main/img/krasnodar.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/krasnodar2.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/krasnodar1.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev prev_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next next_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="hotels_city row alert text-center">
+                <h3 class="display-6">Доступные отели</h3>
+            </div>
+            <div class="container-fluid text-center hotels_cards">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/profhotel.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">ProfHotel</h5>
+                                <p class="card-text">Оснащение и удобства отвечают всем современным стандартам.
+                                    Благодаря WiFi (бесплатно) в общественных зонах гости имеют возможность
+                                    свободно пользоваться интернетом. Сотрудники туристического бюро с удовольствием
+                                    помогут вам при организации туров и экскурсий. Машину можно припарковать на
+                                    собственной автостоянке отеля (бесплатно).</p>
+                                <br>
+                                <p>4999 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/hollywood.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Hollywood De Luxe</h5>
+                                <p class="card-text">Благоустроенные номера гарантируют качественный отдых в отеле.
+                                    Отель предлагает камеру хранения багажа, сейф, кафе, телезал и услуги трансфера.
+                                    Благодаря WiFi (бесплатно) в общественных зонах гости имеют возможность свободно
+                                    пользоваться интернетом. Работает гостевая парковка (бесплатно).</p>
+                                <br>
+                                <p>2800 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/marioti.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Mariott</h5>
+                                <p class="card-text">Этот элитный отель находится в стильном высотном здании в центре
+                                    города.В современных номерах с видом на город есть Wi-Fi, телевизоры с плоским
+                                    экраном и
+                                    мини-бары. В люксах также имеются гостиные, а гости получают доступ в отдельную
+                                    лаундж-зону, где подаются завтрак, закуски и коктейли.</p>
+                                <br>
+                                <p>7030 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

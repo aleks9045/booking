@@ -1,0 +1,112 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+СТЕЙКЕЙШН.ru | Сочи
+{% endblock %}
+
+{% block content %}
+<div class="row alert text-center">
+            <div class="col-12">
+                <h4 class="display-4">Сочи</h4>
+                <div class="city_text display-6">
+                    <h7>
+                        Сочи — город на юге России, расположен на северо-восточном побережье
+                        Чёрного моря в Краснодарском крае.
+                    </h7>
+                </div>
+            </div>
+        </div>
+        <div class="container-sm city_viwer">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="{% static '/main/img/sochi.jpeg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/sochi2.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/sochi3.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev prev_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next next_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="hotels_city row alert text-center">
+                <h3 class="display-6">Доступные отели</h3>
+            </div>
+            <div class="container-fluid text-center hotels_cards">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/Gemchugina.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Жемчужина</h5>
+                                <p class="card-text">Оживленный шикарный отель на берегу моря. В 1,6 км находится
+                                    Сочинский дендрарий.
+                                    В уютных номерах есть бесплатный Wi-Fi, телевизоры с плоским экраном и балконы.
+                                    В большинстве улучшенных номеров есть кровати с мягкими изголовьями, а в изысканных
+                                    люксах – гидромассажные ванны, гостиные и/или кровати с балдахином.
+                                    Предоставляется обслуживание номеров.</p>
+                                <br>
+                                <p>3999 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/City Park Hotel Sochi.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">City Park Hotel Sochi</h5>
+                                <p class="card-text">Этот современный отель расположен в 4 минутах ходьбы от Сочинского
+                                    художественного музея,
+                                    в 9 минутах ходьбы от Зимнего театра и в 28 км от международного аэропорта Сочи.
+                                    В номерах, оформленных в теплых тонах, есть бесплатный доступ к Wi-Fi,
+                                    телевизоры с плоским экраном и письменные столы. В улучшенных номерах также имеются
+                                    гостиные и мини-бары.</p>
+                                <br>
+                                <p>3200 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/Pullman.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Pullman Сочи центр</h5>
+                                <p class="card-text">Этот современный конференц-отель с видом на Черное море расположен
+                                    в 13 минутах ходьбы от Поющих фонтанов,
+                                    в 2 км от Сочинского дендрария и в 3 км от железнодорожной станции Сочи.
+                                    В современных номерах с балконами есть Wi-Fi, письменные столы, телевизоры с плоским
+                                    экраном,
+                                    мини-холодильники и принадлежности для приготовления чая и кофе.</p>
+                                <br>
+                                <p>11 130 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+СТЕЙКЕЙШН.ru | Екатеринбург
+{% endblock %}
+
+{% block content %}
+<div class="row alert text-center">
+            <div class="col-12">
+                <h4 class="display-4">Екатеринбург</h4>
+                <div class="city_text display-6">
+                    <h7>
+                        Екатеринбург — один из самых крупных городов России
+                        (четвертый по численности населения), расположен в центре Среднего Урала, на берегу реки Исеть.
+                    </h7>
+                </div>
+            </div>
+        </div>
+        <div class="container-sm city_viwer">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="{% static '/main/img/ekaterinburg.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/ekaterinburg1.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/ekaterinburg2.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev prev_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next next_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="hotels_city row alert text-center">
+                <h3 class="display-6">Доступные отели</h3>
+            </div>
+            <div class="container-fluid text-center hotels_cards">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/hyatt.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Hyatt Place Ekaterinburg</h5>
+                                <p class="card-text">Различные удобства в этом отеле – например камера хранения багажа,
+                                    сейф, телезал, банкетный зал и прачечная самообслуживания – сделают ваше пребывание
+                                    особенно комфортным. Благодаря WiFi (бесплатно) в общественных зонах гости имеют
+                                    возможность свободно пользоваться интернетом. Работает гостевая парковка
+                                    (бесплатно).</p>
+                                <br>
+                                <p>8250 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/radissonHotelGorizont.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Radisson Hotel Gorizont</h5>
+                                <p class="card-text">Общая кухня оборудована для самостоятельного приготовления пищи.
+                                    Хотите оставаться на связи? В отеле есть бесплатный Wi-Fi. Специально для
+                                    автопутешественников организована парковка. Любимца не придётся оставлять дома:
+                                    разрешается проживание с питомцем за дополнительную плату.</p>
+                                <br>
+                                <p>5700 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/fabric.jpeg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Высоцкий</h5>
+                                <p class="card-text">Элегантные номера оформлены в классическом стиле. Во всех номерах
+                                    есть окна от пола до потолка, телевизоры с плоским экраном и бесплатный Wi-Fi. Из
+                                    угловых люксов вид еще лучше. В апартаментах есть мини-кухни, а в люксах на 51-м
+                                    этаже – гидромассажные ванны. Предоставляется обслуживание номеров.</p>
+                                <br>
+                                <p>3400 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block title %}
+СТЕЙКЕЙШН.ru | Ростов
+{% endblock %}
+
+{% block content %}
+<div class="row alert text-center">
+            <div class="col-12">
+                <h4 class="display-4">Ростов-на-Дону</h4>
+                <div class="city_text display-6">
+                    <h7>
+                        Ростов-на-Дону - город, расположенный на юго-востоке Восточно-Европейской равнины, на берегах
+                        реки Дон, в 46 км от
+                        места ее впадения в Азовское море.
+                    </h7>
+                </div>
+            </div>
+        </div>
+        <div class="container-sm city_viwer">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="{% static '/main/img/rostov.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/rostov1.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="{% static '/main/img/rostov2.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev prev_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next next_arrow" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="hotels_city row alert text-center">
+                <h3 class="display-6">Доступные отели</h3>
+            </div>
+            <div class="container-fluid text-center hotels_cards">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/nabokov.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Набоков</h5>
+                                <p class="card-text">Различные удобства в этом отеле – например камера хранения багажа,
+                                    сейф, телезал, банкетный зал и прачечная самообслуживания – сделают ваше пребывание
+                                    особенно комфортным. Благодаря WiFi (бесплатно) в общественных зонах гости имеют
+                                    возможность свободно пользоваться интернетом. Работает гостевая парковка
+                                    (бесплатно).</p>
+                                <br>
+                                <p>2030 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/radissonHotelGorizont.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Radisson Hotel Gorizont</h5>
+                                <p class="card-text">Общая кухня оборудована для самостоятельного приготовления пищи.
+                                    Хотите оставаться на связи? В отеле есть бесплатный Wi-Fi. Специально для
+                                    автопутешественников организована парковка. Любимца не придётся оставлять дома:
+                                    разрешается проживание с питомцем за дополнительную плату.</p>
+                                <br>
+                                <p>4050 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card">
+                            <img src="{% static '/main/img/fabric.jpeg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Бутик-отель Фабрика</h5>
+                                <p class="card-text">Отель расположен в центре города. Рядом очень много стильных
+                                    концептуальных кофеен,кафе. Персонализированный качественный сервис, непередаваемая
+                                    атмосфера уюта и комфорта сделают Ваше пребывание в южной столице незабываемыми!</p>
+                                <br>
+                                <p>3000 ₽</p>
+                                <br>
+                                <a {% if user.is_authenticated %} href="{% url 'booking' %}" {% else %}  href="accounts/signup/" {% endif %} class="btn btn-primary">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
